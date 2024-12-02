@@ -10,13 +10,14 @@ class SuppllersView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Icon(Icons.arrow_back),
+        leading: GestureDetector(
+            onTap: () => Navigator.pop(context), child: const Icon(Icons.arrow_back)),
         title: Text("Supplier Details",
             style: TextStyles.font20Semibold
                 .copyWith(fontWeight: FontWeight.bold)),
       ),
       backgroundColor: Colors.white,
-      body: SuppllersViewBody(),
+      body: const SuppllersViewBody(),
     );
   }
 }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:luxira/core/router/routes.dart';
+import 'package:luxira/features/home/data/model/product_response.dart';
 import 'package:luxira/features/home/view/widgets/product_item.dart';
 
 class ProductGridView extends StatelessWidget {
+  const ProductGridView({super.key, this.product});
+  final List<ListElement>? product;
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -15,14 +19,20 @@ class ProductGridView extends StatelessWidget {
             mainAxisSpacing: 16.0, // Vertical spacing
             childAspectRatio: 0.8, // Aspect ratio of the cards
           ),
-          itemCount: 4, // Number of product items
+          itemCount: product?.length ?? 0, // Number of product items
           itemBuilder: (context, index) {
+            final currentProduct = product?[index];
             return GestureDetector(
-              onTap: (){
-                 Navigator.pushNamed(context, Routes.suppllersScreen);
+              onTap: () {
+                Navigator.pushNamed(context, Routes.suppllersScreen);
               },
-              
-              child: ProductItem());
+              child: ProductItem(
+                image: currentProduct?.images.first ??
+                    '', // Get the first image or a default empty string
+                title: currentProduct?.title ??
+                    'No Title', // Use a fallback title if null
+              ),
+            );
           },
         ),
       ),

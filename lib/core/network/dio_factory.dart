@@ -11,7 +11,7 @@ class DioFactory {
   static Dio? dio;
 
   static Dio getDio() {
-    Duration timeOut = const Duration(seconds: 30);
+    Duration timeOut = const Duration(seconds: 60);
 
     if (dio == null) {
       dio = Dio();
@@ -30,7 +30,7 @@ class DioFactory {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODk5OTc3NTJjMzA0NmNiYTIwODRhNCIsImlhdCI6MTczMzEwODA4Mn0.XXD3jL_uwzr_fBMosmPvw0VKeI9PjfrpCRvxOeOELTM',
     };
   }
 

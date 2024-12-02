@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:luxira/features/home/data/model/product_response.dart';
 
 import 'product_card.dart';
 
 class SuppllersGradView extends StatelessWidget {
-  const SuppllersGradView({super.key});
+  const SuppllersGradView({super.key, this.product});
+  final ListElement? product;
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +17,11 @@ class SuppllersGradView extends StatelessWidget {
           crossAxisSpacing: 16,
           childAspectRatio: 0.75,
         ),
-        itemCount: 2, // Replace with dynamic product count
+        itemCount: 10, // Replace with dynamic product count
         itemBuilder: (context, index) {
           return ProductCard(
-            productName: 'Product${index + 1}',
-            price: '\$300',
+            productName: product?.title ?? 'Suppllers',
+            price: product?.price.toString() ?? 0.0.toString(),
             onBuyPressed: () {
               // Handle Buy Button
             },

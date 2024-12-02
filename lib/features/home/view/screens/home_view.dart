@@ -24,7 +24,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return  Scaffold(
        backgroundColor: Colors.white,
-       body: HomeViewBody(),
+       body: const HomeViewBody(),
        bottomNavigationBar:CustomBottomNavBar(onTap: _onTap, selectedIndex: _currentIndex,) ,
     );
   }

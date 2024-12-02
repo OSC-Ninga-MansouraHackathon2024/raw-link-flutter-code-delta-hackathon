@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:luxira/core/router/routes.dart';
 import 'package:luxira/core/theming/colors.dart';
 import 'package:luxira/core/theming/styles.dart';
 import 'package:luxira/features/home/view/widgets/suppllers_grad_view.dart';
@@ -32,8 +33,8 @@ class SuppllersViewBody extends StatelessWidget {
                 children: [
                   Text(
                     'Moahand Adel',
-                    style: TextStyles.font20Medium
-                        .copyWith(fontFamily: "Poppnis"),
+                    style:
+                        TextStyles.font20Medium.copyWith(fontFamily: "Poppnis"),
                   ),
                   4.verticalSpace,
                   Align(
@@ -46,13 +47,12 @@ class SuppllersViewBody extends StatelessWidget {
                   ),
                 ],
               ),
-              Spacer(),
-              Icon(Icons.message)
+              const Spacer(),
+              const Icon(Icons.message)
             ],
           ),
           Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 8.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -84,9 +84,14 @@ class SuppllersViewBody extends StatelessWidget {
                       onTap: () {
                         // Handle "See All" functionality
                       },
-                      child: const Text(
-                        "See All",
-                        style: TextStyle(fontSize: 14, color: Colors.blue),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.productScreen);
+                        },
+                        child: const Text(
+                          "See All",
+                          style: TextStyle(fontSize: 14, color: Colors.blue),
+                        ),
                       ),
                     ),
                   ],
@@ -95,7 +100,7 @@ class SuppllersViewBody extends StatelessWidget {
             ),
           ),
           16.verticalSpace,
-          SuppllersGradView()
+          const SuppllersGradView()
         ],
       ),
     ));
