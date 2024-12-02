@@ -1,3 +1,5 @@
+import 'package:luxira/features/home/data/model/categores_response.dart';
+import 'package:luxira/features/home/data/model/categories_request_body.dart';
 import 'package:luxira/features/home/data/model/product_request_body.dart';
 import 'package:luxira/features/home/data/model/product_response.dart';
 import 'package:retrofit/retrofit.dart';  
@@ -13,5 +15,11 @@ abstract class ApiService {
   @GET("home/products")  
   Future<ProductResponse> fetchProducts(
     @Body() ProductRequestBody requestBody,
+  );
+  @GET("home/categories")  
+  Future<CategoresResponse> fetchCategories(
+ @Body() CategoriesRequestBody categoriesRequestBody,
+ 
+
   );  
 }  

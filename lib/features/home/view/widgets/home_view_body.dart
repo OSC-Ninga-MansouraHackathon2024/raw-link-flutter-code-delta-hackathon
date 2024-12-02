@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:luxira/core/theming/colors.dart';
 import 'package:luxira/core/theming/styles.dart';
 import 'package:luxira/core/widgets/app_form_text_field.dart';
+import 'package:luxira/features/home/view/widgets/categories_bloc_builder.dart';
 import 'package:luxira/features/home/view/widgets/filter_widget.dart';
 import 'package:luxira/features/home/view/widgets/product_grid_view.dart';
 import 'package:luxira/features/home/view/widgets/product_item.dart';
@@ -114,8 +115,7 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
         ),
-      
-      
+        const CategoriesBlocBuilder()
       ],
     ));
   }
